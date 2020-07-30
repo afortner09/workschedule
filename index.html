@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+    <div class="container" style="text-align: center;">
+      <ul id="time-slots">
+        <li style="margin-bottom: 20px;">
+            <span class="hours">09 AM</span>
+            <input type="text" id="9am" class="task"/>
+            <button time="#9am">Save</button>
+        </li>
+        <li style="margin-bottom: 20px;">
+            <span class="hours">10 AM</span>
+            <input type="text" id="10am" class="task"/>
+            <button time="#10am">Save</button>
+        </li>
+        <li style="margin-bottom: 20px;">
+          <span class="hours">11 AM</span>
+          <input type="text" id="11am" class="task"/>
+          <button time="#11am">Save</button>
+        </li>
+        <li style="margin-bottom: 20px;">
+          <span class="hours">12 PM</span>
+          <input type="text" id="12pm" class="task"/>
+          <button time="#12pm">Save</button>
+        </li>
+        <li style="margin-bottom: 20px;">
+          <span class="hours">01 PM</span>
+          <input type="text" id="1pm" class="task"/>
+          <button time="#1pm">Save</button>
+        </li>
+        <li style="margin-bottom: 20px;">
+          <span class="hours">02 PM</span>
+          <input type="text" id="2pm" class="task"/>
+          <button time="#2pm">Save</button>
+        </li>
+        <li style="margin-bottom: 20px;">
+          <span class="hours">03 PM</span>
+          <input type="text" id="3pm" class="task"/>
+          <button time="#3pm">Save</button>
+        </li>
+        <li style="margin-bottom: 20px;">
+          <span class="hours">04 PM</span>
+          <input type="text" id="4pm" class="task"/>
+          <button time="#4pm">Save</button>
+        </li>
+        <li style="margin-bottom: 20px;">
+          <span class="hours">05 PM</span>
+          <input type="text" id="5pm" class="task" />
+          <button time="#5pm">Save</button>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script>
+      const m = moment()
+      var day = m.format("dddd MMMM YYYY")
+
+      $("currentDay").ready(function(){
+        $(currentDay).html("<p>"+day+"</p>")
+          
+      })
+                  $("button").on("click",function(){ 
+                var timeId=$(this).attr("time");
+                var userTask=$(timeId).val();
+                localStorage.setItem(timeId,userTask);
+            });
+            var nineAm=localStorage.getItem("#9am");
+            if(nineAm) {
+                $("#9am").val(nineAm);
+            }
+            var tenAm=localStorage.getItem("#10am");
+            if(tenAm) {
+                $("#10am").val(tenAm);
+            }
+            var elevenAm=localStorage.getItem("#11am");
+            if(elevenAm) {
+                $("#11am").val(elevenAm);
+            }
+            var twelvePm=localStorage.getItem("#12pm");
+            if(twelvePm) {
+                $("#12pm").val(twelvePm);
+            }
+            var onePm=localStorage.getItem("#1pm");
+            if(onePm) {
+                $("#1pm").val(onePm);
+            }
+            var twoPm=localStorage.getItem("#2pm");
+            if(twoPm) {
+                $("#2pm").val(twoPm);
+            }
+            var threePm=localStorage.getItem("#3pm");
+            if(threePm) {
+                $("#3pm").val(threePm);
+            }
+            var fourPm=localStorage.getItem("#4pm");
+            if(fourPm) {
+                $("#4pm").val(fourPm);
+            }
+            var fivePm=localStorage.getItem("#5pm");
+            if(nineAm) {
+                $("#5pm").val(fivePm);
+            }
+
+            for(var i=9;i<=17;i++) {
+                // Get the current hour
+
+                var amPm="am";
+                if(i>=12) {
+                    amPm="pm";
+                }
+                var hour=i;
+                if(i>12) {
+                    hour-=12;
+                }
+
+                var targetId="#"+hour+amPm;
+                var currentTime = today.getHours()
+
+                var className="future";
+                  if (currentTime < i) {
+                    className = "class future";
+                  }else if (currentTime > i) {
+                    className = "class past";
+                  }else {
+                    className = "class current";
+                  }
+                
+                  }
+
+                $(targetId).addClass(className);
+
+
+            
+
+            /// Moment JS examples
+            console.log(moment().format("MM/DD/YYY"));
+            console.log(moment().format("HH:mm A"));
+            console.log(moment().format("h:mm a"));
+         </script>
+
+    </script>
+  </body>
+</html>

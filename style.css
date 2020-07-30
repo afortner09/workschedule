@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap');
+
+body {
+  background-color: #005580;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+textarea{
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: lightslategrey;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
+.description{
+  white-space: pre-wrap;
+}
+
+.time-block{
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+}
+
+.past {
+  background-color: #d3d3d3;
+  color: white;
+}
+
+.present {
+  background-color: #ff6961;
+  color: white;
+}
+
+.future {
+  background-color: #77dd77;
+  color: white;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+
+.container{
+  max-width: 1000px;
+  padding: 3%;
+  margin: auto;
+}
+#time-slots {
+  list-style: none;
+}
+
+.hours {
+  color: black;
+  background-color: lightslategrey;
+  width: 900px !important;
+  font-size: 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin: 4px 2px;
+  padding: 8px 16px;
+  margin-bottom: 30px;
+}
+
+.task {
+  font-family: 'Red Rose', cursive;
+  width: 70%;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+}
+
+button {
+  background-color: black;
+  color: whitesmoke;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 25px;
+}
